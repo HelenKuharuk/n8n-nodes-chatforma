@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: carbon568/chtfrmn8n:latest
+          tags: helenkuharuk/n8nwithchatforma:latest
