@@ -6,7 +6,9 @@ import type {
 	INodeTypeDescription,
 } from 'n8n-workflow';
 
+
 import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+
 
 import axios, { AxiosRequestConfig } from 'axios';
 
@@ -60,7 +62,7 @@ export class Chatforma implements INodeType {
 
 			{
 				displayName: 'Объект',
-				name: 'params',
+				name: 'object',
 				type: 'options',
 				displayOptions: {
 					show: {
@@ -211,7 +213,7 @@ export class Chatforma implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						params: [
+						object: [
 							'forms', 'lists', 'dialogs','dialogs_messages', 'users'
 						],
 						action: [
@@ -229,7 +231,7 @@ export class Chatforma implements INodeType {
 				required: true,
 				displayOptions: {
 					show: {
-						params: [
+						object: [
 							'dialogs_messages'
 						],
 						action: [
@@ -431,7 +433,7 @@ export class Chatforma implements INodeType {
 		};
 
 		if (resource === 'get') {
-			const params = this.getNodeParameter('params', 0) as string;
+			const params = this.getNodeParameter('object', 0) as string;
 			if (params === 'bots') {
 
 
